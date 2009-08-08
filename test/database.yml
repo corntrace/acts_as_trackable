@@ -1,0 +1,6 @@
+adapter: mysql
+encoding: utf8
+database: acts_as_trackable_plugin_test
+username: root
+password: '123'
+socket: /var/run/mysqld/mysqld.sock
