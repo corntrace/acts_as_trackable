@@ -869,3 +869,422 @@
   [4;35;1mTrack Update (0.3ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 3, `trackable_type` = 'Order', `updated_at` = '2009-08-08 10:57:00' WHERE `id` = 3[0m
   [4;36;1mTrack Load (0.4ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (trackable_id = 3 and trackable_type = 'Order') ORDER BY created_at DESC[0m
   [4;35;1mSQL (10.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.6ms)[0m   [0mDROP TABLE `orders`[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE `orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `desc` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mDROP TABLE `tracks`[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mCREATE TABLE `tracks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` varchar(255) DEFAULT '', `trackable_id` int(11), `trackable_type` varchar(255), `operator_name` varchar(255) DEFAULT '', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (4.5ms)[0m   [0;1mCREATE INDEX `index_tracks_on_trackable_type` ON `tracks` (`trackable_type`)[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCREATE INDEX `index_tracks_on_trackable_id` ON `tracks` (`trackable_id`)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mOrder Create (0.3ms)[0m   [0;1mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:25:41', 'desc ...', '2009-08-10 15:25:41')[0m
+  [4;35;1mTrack Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `tracks`[0m
+  [4;36;1mTrack Create (0.2ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:25:41', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:25:41')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.1ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:25:41', 'desc ...', '2009-08-10 15:25:41')[0m
+  [4;36;1mTrack Create (0.1ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:25:41', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:25:41')[0m
+  [4;35;1mTrack Update (0.3ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 2, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:25:41' WHERE `id` = 2[0m
+  [4;36;1mTrack Load (0.4ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (trackable_id = 2 and trackable_type = 'Order') ORDER BY created_at DESC[0m
+  [4;35;1mSQL (16.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:25:41', 'desc ...', '2009-08-10 15:25:41')[0m
+  [4;36;1mTrack Create (0.1ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:25:41', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:25:41')[0m
+  [4;35;1mTrack Update (0.3ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 3, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:25:41' WHERE `id` = 3[0m
+  [4;36;1mTrack Load (0.3ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (trackable_id = 3 and trackable_type = 'Order') ORDER BY created_at DESC[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:25:41', 'desc ...', '2009-08-10 15:25:41')[0m
+  [4;36;1mTrack Create (0.1ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:25:41', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:25:41')[0m
+  [4;35;1mTrack Create (0.3ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:25:41', NULL, 'Test content', NULL, 'Test name', '2009-08-10 15:25:41')[0m
+  [4;36;1mTrack Update (0.3ms)[0m   [0;1mUPDATE `tracks` SET `trackable_id` = 4, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:25:41' WHERE `id` = 5[0m
+  [4;35;1mTrack Create (0.1ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:25:41', NULL, 'Another Test Content', NULL, 'Test name 2', '2009-08-10 15:25:41')[0m
+  [4;36;1mTrack Update (0.2ms)[0m   [0;1mUPDATE `tracks` SET `trackable_id` = 4, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:25:41' WHERE `id` = 6[0m
+  [4;35;1mTrack Load (0.4ms)[0m   [0mSELECT * FROM `tracks` WHERE (`tracks`.trackable_id = 4 AND `tracks`.trackable_type = 'Order') [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mDROP TABLE `orders`[0m
+  [4;36;1mSQL (4.4ms)[0m   [0;1mCREATE TABLE `orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `desc` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE `tracks`[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCREATE TABLE `tracks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` varchar(255) DEFAULT '', `trackable_id` int(11), `trackable_type` varchar(255), `operator_name` varchar(255) DEFAULT '', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (4.5ms)[0m   [0;1mCREATE INDEX `index_tracks_on_trackable_type` ON `tracks` (`trackable_type`)[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCREATE INDEX `index_tracks_on_trackable_id` ON `tracks` (`trackable_id`)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mOrder Create (0.2ms)[0m   [0;1mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:36:25', 'desc ...', '2009-08-10 15:36:25')[0m
+  [4;35;1mTrack Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `tracks`[0m
+  [4;36;1mTrack Create (0.3ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:36:25', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:36:25')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:36:25', 'desc ...', '2009-08-10 15:36:25')[0m
+  [4;36;1mTrack Create (0.1ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:36:25', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:36:25')[0m
+  [4;35;1mTrack Update (0.3ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 2, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:36:25' WHERE `id` = 2[0m
+  [4;36;1mTrack Load (0.4ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (trackable_id = 2 and trackable_type = 'Order') ORDER BY created_at DESC[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:36:25', 'desc ...', '2009-08-10 15:36:25')[0m
+  [4;36;1mTrack Create (0.2ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:36:25', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:36:25')[0m
+  [4;35;1mTrack Update (0.3ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 3, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:36:25' WHERE `id` = 3[0m
+  [4;36;1mTrack Load (0.3ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (trackable_id = 3 and trackable_type = 'Order') ORDER BY created_at DESC[0m
+  [4;35;1mSQL (7.9ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:36:25', 'desc ...', '2009-08-10 15:36:25')[0m
+  [4;36;1mTrack Create (0.1ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:36:25', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:36:25')[0m
+  [4;35;1mTrack Create (0.1ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:36:25', NULL, 'Test content', NULL, 'Test name', '2009-08-10 15:36:25')[0m
+  [4;36;1mTrack Update (0.3ms)[0m   [0;1mUPDATE `tracks` SET `trackable_id` = 4, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:36:25' WHERE `id` = 5[0m
+  [4;35;1mTrack Create (0.2ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:36:25', NULL, 'Another Test Content', NULL, 'Test name 2', '2009-08-10 15:36:25')[0m
+  [4;36;1mTrack Update (0.2ms)[0m   [0;1mUPDATE `tracks` SET `trackable_id` = 4, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:36:25' WHERE `id` = 6[0m
+  [4;35;1mTrack Load (0.4ms)[0m   [0mSELECT * FROM `tracks` WHERE (`tracks`.trackable_id = 4 AND `tracks`.trackable_type = 'Order') [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (30.6ms)[0m   [0mDROP TABLE `orders`[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mCREATE TABLE `orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `desc` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE `tracks`[0m
+  [4;35;1mSQL (6.7ms)[0m   [0mCREATE TABLE `tracks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` varchar(255) DEFAULT '', `trackable_id` int(11), `trackable_type` varchar(255), `operator_name` varchar(255) DEFAULT '', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (13.1ms)[0m   [0;1mCREATE INDEX `index_tracks_on_trackable_type` ON `tracks` (`trackable_type`)[0m
+  [4;35;1mSQL (21.1ms)[0m   [0mCREATE INDEX `index_tracks_on_trackable_id` ON `tracks` (`trackable_id`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mOrder Create (0.6ms)[0m   [0;1mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:41:08', 'desc ...', '2009-08-10 15:41:08')[0m
+  [4;35;1mTrack Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `tracks`[0m
+  [4;36;1mTrack Create (0.2ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:41:08', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:41:08')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:41:08', 'desc ...', '2009-08-10 15:41:08')[0m
+  [4;36;1mTrack Create (0.1ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:41:08', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:41:08')[0m
+  [4;35;1mTrack Update (0.3ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 2, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:41:08' WHERE `id` = 2[0m
+  [4;36;1mTrack Load (4.4ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (trackable_id = 2 and trackable_type = 'Order') ORDER BY created_at DESC[0m
+  [4;35;1mSQL (13.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:41:08', 'desc ...', '2009-08-10 15:41:08')[0m
+  [4;36;1mTrack Create (0.2ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:41:08', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:41:08')[0m
+  [4;35;1mTrack Update (0.3ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 3, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:41:08' WHERE `id` = 3[0m
+  [4;36;1mTrack Load (0.3ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (trackable_id = 3 and trackable_type = 'Order') ORDER BY created_at DESC[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:41:08', 'desc ...', '2009-08-10 15:41:08')[0m
+  [4;36;1mTrack Create (0.2ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:41:08', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:41:08')[0m
+  [4;35;1mTrack Create (1.9ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:41:08', NULL, 'Test content', NULL, 'Test name', '2009-08-10 15:41:08')[0m
+  [4;36;1mTrack Update (7.9ms)[0m   [0;1mUPDATE `tracks` SET `trackable_id` = 4, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:41:08' WHERE `id` = 5[0m
+  [4;35;1mTrack Create (4.7ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:41:08', NULL, 'Another Test Content', NULL, 'Test name 2', '2009-08-10 15:41:08')[0m
+  [4;36;1mTrack Update (0.4ms)[0m   [0;1mUPDATE `tracks` SET `trackable_id` = 4, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:41:08' WHERE `id` = 6[0m
+  [4;35;1mTrack Load (2.4ms)[0m   [0mSELECT * FROM `tracks` WHERE (`tracks`.trackable_id = 4 AND `tracks`.trackable_type = 'Order') [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (29.0ms)[0m   [0mDROP TABLE `orders`[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mCREATE TABLE `orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `desc` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mDROP TABLE `tracks`[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mCREATE TABLE `tracks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` varchar(255) DEFAULT '', `trackable_id` int(11), `trackable_type` varchar(255), `operator_name` varchar(255) DEFAULT '', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (35.7ms)[0m   [0;1mCREATE INDEX `index_tracks_on_trackable_type` ON `tracks` (`trackable_type`)[0m
+  [4;35;1mSQL (6.1ms)[0m   [0mCREATE INDEX `index_tracks_on_trackable_id` ON `tracks` (`trackable_id`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mOrder Create (0.3ms)[0m   [0;1mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:41:34', 'desc ...', '2009-08-10 15:41:34')[0m
+  [4;35;1mTrack Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `tracks`[0m
+  [4;36;1mTrack Create (0.3ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:41:34', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:41:34')[0m
+  [4;35;1mSQL (5.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:41:34', 'desc ...', '2009-08-10 15:41:34')[0m
+  [4;36;1mTrack Create (7.6ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:41:34', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:41:34')[0m
+  [4;35;1mTrack Update (6.5ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 2, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:41:34' WHERE `id` = 2[0m
+  [4;36;1mTrack Load (0.5ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (trackable_id = 2 and trackable_type = 'Order') ORDER BY created_at DESC[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:41:34', 'desc ...', '2009-08-10 15:41:34')[0m
+  [4;36;1mTrack Create (2.0ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:41:34', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:41:34')[0m
+  [4;35;1mTrack Update (8.4ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 3, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:41:34' WHERE `id` = 3[0m
+  [4;36;1mTrack Load (0.6ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (trackable_id = 3 and trackable_type = 'Order') ORDER BY created_at DESC[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:41:34', 'desc ...', '2009-08-10 15:41:34')[0m
+  [4;36;1mTrack Create (1.9ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:41:34', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:41:34')[0m
+  [4;35;1mTrack Create (3.4ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:41:35', NULL, 'Test content', NULL, 'Test name', '2009-08-10 15:41:35')[0m
+  [4;36;1mTrack Update (3.1ms)[0m   [0;1mUPDATE `tracks` SET `trackable_id` = 4, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:41:35' WHERE `id` = 5[0m
+  [4;35;1mTrack Create (4.2ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:41:35', NULL, 'Another Test Content', NULL, 'Test name 2', '2009-08-10 15:41:35')[0m
+  [4;36;1mTrack Update (1.6ms)[0m   [0;1mUPDATE `tracks` SET `trackable_id` = 4, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:41:35' WHERE `id` = 6[0m
+  [4;35;1mTrack Load (2.0ms)[0m   [0mSELECT * FROM `tracks` WHERE (`tracks`.trackable_id = 4 AND `tracks`.trackable_type = 'Order') [0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (28.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mDROP TABLE `orders`[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCREATE TABLE `orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `desc` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mDROP TABLE `tracks`[0m
+  [4;35;1mSQL (25.4ms)[0m   [0mCREATE TABLE `tracks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` varchar(255) DEFAULT '', `trackable_id` int(11), `trackable_type` varchar(255), `operator_name` varchar(255) DEFAULT '', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (13.9ms)[0m   [0;1mCREATE INDEX `index_tracks_on_trackable_type` ON `tracks` (`trackable_type`)[0m
+  [4;35;1mSQL (5.8ms)[0m   [0mCREATE INDEX `index_tracks_on_trackable_id` ON `tracks` (`trackable_id`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mOrder Create (0.6ms)[0m   [0;1mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:46:47', 'desc ...', '2009-08-10 15:46:47')[0m
+  [4;35;1mTrack Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `tracks`[0m
+  [4;36;1mTrack Create (0.2ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:46:47', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:46:47')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:46:47', 'desc ...', '2009-08-10 15:46:47')[0m
+  [4;36;1mTrack Create (0.1ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:46:47', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:46:47')[0m
+  [4;35;1mTrack Update (5.2ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 2, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:46:47' WHERE `id` = 2[0m
+  [4;36;1mTrack Load (0.5ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (trackable_id = 2 and trackable_type = 'Order') ORDER BY created_at DESC[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (6.8ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:46:47', 'desc ...', '2009-08-10 15:46:47')[0m
+  [4;36;1mTrack Create (7.7ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:46:47', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:46:47')[0m
+  [4;35;1mTrack Update (0.4ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 3, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:46:47' WHERE `id` = 3[0m
+  [4;36;1mTrack Load (0.4ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (trackable_id = 3 and trackable_type = 'Order') ORDER BY created_at DESC[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (2.1ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:46:47', 'desc ...', '2009-08-10 15:46:47')[0m
+  [4;36;1mTrack Create (3.3ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:46:47', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:46:47')[0m
+  [4;35;1mTrack Create (9.4ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:46:47', NULL, 'Test content', NULL, 'Test name', '2009-08-10 15:46:47')[0m
+  [4;36;1mTrack Update (0.4ms)[0m   [0;1mUPDATE `tracks` SET `trackable_id` = 4, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:46:47' WHERE `id` = 5[0m
+  [4;35;1mTrack Create (0.2ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:46:47', NULL, 'Another Test Content', NULL, 'Test name 2', '2009-08-10 15:46:47')[0m
+  [4;36;1mTrack Update (0.2ms)[0m   [0;1mUPDATE `tracks` SET `trackable_id` = 4, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:46:47' WHERE `id` = 6[0m
+  [4;35;1mTrack Load (0.4ms)[0m   [0mSELECT * FROM `tracks` WHERE (`tracks`.trackable_id = 4 AND `tracks`.trackable_type = 'Order') [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mDROP TABLE `orders`[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCREATE TABLE `orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `desc` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mDROP TABLE `tracks`[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mCREATE TABLE `tracks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` varchar(255) DEFAULT '', `trackable_id` int(11), `trackable_type` varchar(255), `operator_name` varchar(255) DEFAULT '', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (26.0ms)[0m   [0;1mCREATE INDEX `index_tracks_on_trackable_type` ON `tracks` (`trackable_type`)[0m
+  [4;35;1mSQL (5.9ms)[0m   [0mCREATE INDEX `index_tracks_on_trackable_id` ON `tracks` (`trackable_id`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mOrder Create (6.2ms)[0m   [0;1mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:49:19', 'desc ...', '2009-08-10 15:49:19')[0m
+  [4;35;1mTrack Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `tracks`[0m
+  [4;36;1mTrack Create (5.1ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:49:19', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:49:19')[0m
+  [4;35;1mSQL (32.9ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:49:19', 'desc ...', '2009-08-10 15:49:19')[0m
+  [4;36;1mTrack Create (0.1ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:49:19', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:49:19')[0m
+  [4;35;1mTrack Update (0.7ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 2, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:49:19' WHERE `id` = 2[0m
+  [4;36;1mTrack Load (0.4ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (trackable_id = 2 and trackable_type = 'Order') ORDER BY created_at DESC[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:49:19', 'desc ...', '2009-08-10 15:49:19')[0m
+  [4;36;1mTrack Create (0.1ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:49:19', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:49:19')[0m
+  [4;35;1mTrack Update (0.2ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 3, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:49:19' WHERE `id` = 3[0m
+  [4;36;1mTrack Load (0.4ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (trackable_id = 3 and trackable_type = 'Order') ORDER BY created_at DESC[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:49:19', 'desc ...', '2009-08-10 15:49:19')[0m
+  [4;36;1mTrack Create (2.1ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:49:19', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:49:19')[0m
+  [4;35;1mTrack Create (8.1ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:49:19', NULL, 'Test content', NULL, 'Test name', '2009-08-10 15:49:19')[0m
+  [4;36;1mTrack Update (8.4ms)[0m   [0;1mUPDATE `tracks` SET `trackable_id` = 4, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:49:19' WHERE `id` = 5[0m
+  [4;35;1mTrack Create (0.3ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:49:19', NULL, 'Another Test Content', NULL, 'Test name 2', '2009-08-10 15:49:19')[0m
+  [4;36;1mTrack Update (0.5ms)[0m   [0;1mUPDATE `tracks` SET `trackable_id` = 4, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:49:19' WHERE `id` = 6[0m
+  [4;35;1mTrack Load (0.4ms)[0m   [0mSELECT * FROM `tracks` WHERE (`tracks`.trackable_id = 4 AND `tracks`.trackable_type = 'Order') [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mOrder Create (8.8ms)[0m   [0;1mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:49:19', 'desc ...', '2009-08-10 15:49:19')[0m
+  [4;35;1mTrack Create (0.3ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:49:19', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:49:19')[0m
+  [4;36;1mTrack Create (0.1ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:49:19', NULL, 'Test content', NULL, '', '2009-08-10 15:49:19')[0m
+  [4;35;1mTrack Update (0.3ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 5, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:49:19' WHERE `id` = 8[0m
+  [4;36;1mTrack Load (0.3ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (`tracks`.trackable_id = 5 AND `tracks`.trackable_type = 'Order') [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (26.8ms)[0m   [0mDROP TABLE `orders`[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mCREATE TABLE `orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `desc` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (5.2ms)[0m   [0;1mDROP TABLE `tracks`[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mCREATE TABLE `tracks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` varchar(255) DEFAULT '', `trackable_id` int(11), `trackable_type` varchar(255), `operator_name` varchar(255) DEFAULT '', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (5.7ms)[0m   [0;1mCREATE INDEX `index_tracks_on_trackable_type` ON `tracks` (`trackable_type`)[0m
+  [4;35;1mSQL (5.5ms)[0m   [0mCREATE INDEX `index_tracks_on_trackable_id` ON `tracks` (`trackable_id`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mOrder Create (0.4ms)[0m   [0;1mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:51:58', 'desc ...', '2009-08-10 15:51:58')[0m
+  [4;35;1mTrack Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `tracks`[0m
+  [4;36;1mTrack Create (5.9ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:51:58', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:51:58')[0m
+  [4;35;1mSQL (22.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:51:58', 'desc ...', '2009-08-10 15:51:58')[0m
+  [4;36;1mTrack Create (0.1ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:51:58', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:51:58')[0m
+  [4;35;1mSQL (4.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:51:58', 'desc ...', '2009-08-10 15:51:58')[0m
+  [4;36;1mTrack Create (0.1ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:51:58', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:51:58')[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:51:58', 'desc ...', '2009-08-10 15:51:58')[0m
+  [4;36;1mTrack Create (0.6ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:51:58', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:51:58')[0m
+  [4;35;1mTrack Create (0.1ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:51:58', NULL, 'Test content', NULL, 'Test name', '2009-08-10 15:51:58')[0m
+  [4;36;1mTrack Update (0.3ms)[0m   [0;1mUPDATE `tracks` SET `trackable_id` = 4, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:51:58' WHERE `id` = 5[0m
+  [4;35;1mTrack Create (0.1ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:51:58', NULL, 'Another Test Content', NULL, 'Test name 2', '2009-08-10 15:51:58')[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mOrder Create (0.2ms)[0m   [0;1mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:51:58', 'desc ...', '2009-08-10 15:51:58')[0m
+  [4;35;1mTrack Create (4.9ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:51:58', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:51:58')[0m
+  [4;36;1mTrack Create (0.3ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:51:58', NULL, 'Test content', NULL, '', '2009-08-10 15:51:58')[0m
+  [4;35;1mTrack Update (1.7ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 5, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:51:58' WHERE `id` = 8[0m
+  [4;36;1mTrack Load (10.9ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (`tracks`.trackable_id = 5 AND `tracks`.trackable_type = 'Order') [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (21.0ms)[0m   [0mDROP TABLE `orders`[0m
+  [4;36;1mSQL (5.2ms)[0m   [0;1mCREATE TABLE `orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `desc` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mDROP TABLE `tracks`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mCREATE TABLE `tracks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` varchar(255) DEFAULT '', `trackable_id` int(11), `trackable_type` varchar(255), `operator_name` varchar(255) DEFAULT '', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (6.6ms)[0m   [0;1mCREATE INDEX `index_tracks_on_trackable_type` ON `tracks` (`trackable_type`)[0m
+  [4;35;1mSQL (10.2ms)[0m   [0mCREATE INDEX `index_tracks_on_trackable_id` ON `tracks` (`trackable_id`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mOrder Create (0.3ms)[0m   [0;1mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:52:17', 'desc ...', '2009-08-10 15:52:17')[0m
+  [4;35;1mTrack Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `tracks`[0m
+  [4;36;1mTrack Create (0.6ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:52:17', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:52:17')[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:52:17', 'desc ...', '2009-08-10 15:52:17')[0m
+  [4;36;1mTrack Create (4.8ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:52:17', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:52:17')[0m
+  [4;35;1mTrack Update (4.3ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 2, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:52:17' WHERE `id` = 2[0m
+  [4;36;1mTrack Load (0.6ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (trackable_id = 2 and trackable_type = 'Order') ORDER BY created_at DESC[0m
+  [4;35;1mSQL (12.8ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:52:17', 'desc ...', '2009-08-10 15:52:17')[0m
+  [4;36;1mTrack Create (0.2ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:52:17', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:52:17')[0m
+  [4;35;1mTrack Update (0.3ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 3, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:52:17' WHERE `id` = 3[0m
+  [4;36;1mTrack Load (0.3ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (trackable_id = 3 and trackable_type = 'Order') ORDER BY created_at DESC[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (1.5ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:52:17', 'desc ...', '2009-08-10 15:52:17')[0m
+  [4;36;1mTrack Create (4.6ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:52:17', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:52:17')[0m
+  [4;35;1mTrack Create (1.3ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:52:17', NULL, 'Test content', NULL, 'Test name', '2009-08-10 15:52:17')[0m
+  [4;36;1mTrack Update (2.5ms)[0m   [0;1mUPDATE `tracks` SET `trackable_id` = 4, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:52:17' WHERE `id` = 5[0m
+  [4;35;1mTrack Create (0.6ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:52:17', NULL, 'Another Test Content', NULL, 'Test name 2', '2009-08-10 15:52:17')[0m
+  [4;36;1mTrack Update (0.3ms)[0m   [0;1mUPDATE `tracks` SET `trackable_id` = 4, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:52:17' WHERE `id` = 6[0m
+  [4;35;1mTrack Load (0.4ms)[0m   [0mSELECT * FROM `tracks` WHERE (`tracks`.trackable_id = 4 AND `tracks`.trackable_type = 'Order') [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mOrder Create (0.2ms)[0m   [0;1mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:52:17', 'desc ...', '2009-08-10 15:52:17')[0m
+  [4;35;1mTrack Create (9.1ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:52:17', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:52:17')[0m
+  [4;36;1mTrack Create (0.2ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:52:17', NULL, 'Test content', NULL, '', '2009-08-10 15:52:17')[0m
+  [4;35;1mTrack Update (0.3ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 5, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:52:17' WHERE `id` = 8[0m
+  [4;36;1mTrack Load (0.3ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (`tracks`.trackable_id = 5 AND `tracks`.trackable_type = 'Order') [0m
+  [4;35;1mSQL (0.8ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (30.7ms)[0m   [0mDROP TABLE `orders`[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE `orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `desc` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mDROP TABLE `tracks`[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mCREATE TABLE `tracks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` varchar(255) DEFAULT '', `trackable_id` int(11), `trackable_type` varchar(255), `operator_name` varchar(255) DEFAULT '', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (19.8ms)[0m   [0;1mCREATE INDEX `index_tracks_on_trackable_type` ON `tracks` (`trackable_type`)[0m
+  [4;35;1mSQL (8.2ms)[0m   [0mCREATE INDEX `index_tracks_on_trackable_id` ON `tracks` (`trackable_id`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mOrder Create (0.7ms)[0m   [0;1mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:52:53', 'desc ...', '2009-08-10 15:52:53')[0m
+  [4;35;1mTrack Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `tracks`[0m
+  [4;36;1mTrack Create (0.2ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:52:53', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:52:53')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:52:53', 'desc ...', '2009-08-10 15:52:53')[0m
+  [4;36;1mTrack Create (2.9ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:52:53', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:52:53')[0m
+  [4;35;1mTrack Update (10.9ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 2, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:52:53' WHERE `id` = 2[0m
+  [4;36;1mTrack Load (0.9ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (trackable_id = 2 and trackable_type = 'Order') ORDER BY created_at DESC[0m
+  [4;35;1mSQL (5.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:52:53', 'desc ...', '2009-08-10 15:52:53')[0m
+  [4;36;1mTrack Create (0.2ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:52:53', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:52:53')[0m
+  [4;35;1mTrack Update (1.6ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 3, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:52:53' WHERE `id` = 3[0m
+  [4;36;1mTrack Load (5.9ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (trackable_id = 3 and trackable_type = 'Order') ORDER BY created_at DESC[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:52:53', 'desc ...', '2009-08-10 15:52:53')[0m
+  [4;36;1mTrack Create (0.3ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:52:53', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:52:53')[0m
+  [4;35;1mTrack Create (1.6ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:52:53', NULL, 'Test content', NULL, 'Test name', '2009-08-10 15:52:53')[0m
+  [4;36;1mTrack Update (11.3ms)[0m   [0;1mUPDATE `tracks` SET `trackable_id` = 4, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:52:53' WHERE `id` = 5[0m
+  [4;35;1mTrack Create (0.2ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:52:53', NULL, 'Another Test Content', NULL, 'Test name 2', '2009-08-10 15:52:53')[0m
+  [4;36;1mTrack Update (0.2ms)[0m   [0;1mUPDATE `tracks` SET `trackable_id` = 4, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:52:53' WHERE `id` = 6[0m
+  [4;35;1mTrack Load (0.4ms)[0m   [0mSELECT * FROM `tracks` WHERE (`tracks`.trackable_id = 4 AND `tracks`.trackable_type = 'Order') [0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mOrder Create (0.2ms)[0m   [0;1mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:52:53', 'desc ...', '2009-08-10 15:52:53')[0m
+  [4;35;1mTrack Create (0.2ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:52:53', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:52:53')[0m
+  [4;36;1mTrack Create (0.1ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:52:53', NULL, 'Test content', NULL, '', '2009-08-10 15:52:53')[0m
+  [4;35;1mTrack Update (1.2ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 5, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:52:53' WHERE `id` = 8[0m
+  [4;36;1mTrack Load (6.1ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (`tracks`.trackable_id = 5 AND `tracks`.trackable_type = 'Order') [0m
+  [4;35;1mSQL (0.8ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (24.9ms)[0m   [0mDROP TABLE `orders`[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mCREATE TABLE `orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `desc` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mDROP TABLE `tracks`[0m
+  [4;35;1mSQL (4.9ms)[0m   [0mCREATE TABLE `tracks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` varchar(255) DEFAULT '', `trackable_id` int(11), `trackable_type` varchar(255), `operator_name` varchar(255) DEFAULT '', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (5.7ms)[0m   [0;1mCREATE INDEX `index_tracks_on_trackable_type` ON `tracks` (`trackable_type`)[0m
+  [4;35;1mSQL (25.7ms)[0m   [0mCREATE INDEX `index_tracks_on_trackable_id` ON `tracks` (`trackable_id`)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM `schema_migrations`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mOrder Create (0.2ms)[0m   [0;1mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:54:46', 'desc ...', '2009-08-10 15:54:46')[0m
+  [4;35;1mTrack Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `tracks`[0m
+  [4;36;1mTrack Create (0.2ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:54:46', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:54:46')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.2ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:54:46', 'desc ...', '2009-08-10 15:54:46')[0m
+  [4;36;1mTrack Create (0.2ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:54:46', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:54:46')[0m
+  [4;35;1mTrack Update (0.3ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 2, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:54:46' WHERE `id` = 2[0m
+  [4;36;1mTrack Load (1.9ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (trackable_id = 2 and trackable_type = 'Order') ORDER BY created_at DESC[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (0.3ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:54:46', 'desc ...', '2009-08-10 15:54:46')[0m
+  [4;36;1mTrack Create (0.2ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:54:46', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:54:46')[0m
+  [4;35;1mTrack Update (4.7ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 3, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:54:46' WHERE `id` = 3[0m
+  [4;36;1mTrack Load (0.5ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (trackable_id = 3 and trackable_type = 'Order') ORDER BY created_at DESC[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mOrder Create (2.7ms)[0m   [0mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:54:46', 'desc ...', '2009-08-10 15:54:46')[0m
+  [4;36;1mTrack Create (0.3ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:54:46', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:54:46')[0m
+  [4;35;1mTrack Create (0.1ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:54:46', NULL, 'Test content', NULL, 'Test name', '2009-08-10 15:54:46')[0m
+  [4;36;1mTrack Update (0.3ms)[0m   [0;1mUPDATE `tracks` SET `trackable_id` = 4, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:54:46' WHERE `id` = 5[0m
+  [4;35;1mTrack Create (0.1ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:54:46', NULL, 'Another Test Content', NULL, 'Test name 2', '2009-08-10 15:54:46')[0m
+  [4;36;1mTrack Update (0.2ms)[0m   [0;1mUPDATE `tracks` SET `trackable_id` = 4, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:54:46' WHERE `id` = 6[0m
+  [4;35;1mTrack Load (2.4ms)[0m   [0mSELECT * FROM `tracks` WHERE (`tracks`.trackable_id = 4 AND `tracks`.trackable_type = 'Order') [0m
+  [4;36;1mSQL (5.5ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mOrder Create (2.1ms)[0m   [0;1mINSERT INTO `orders` (`name`, `updated_at`, `desc`, `created_at`) VALUES('test order', '2009-08-10 15:54:47', 'desc ...', '2009-08-10 15:54:47')[0m
+  [4;35;1mTrack Create (4.3ms)[0m   [0mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:54:47', NULL, 'test track', NULL, 'Kevin', '2009-08-10 15:54:47')[0m
+  [4;36;1mTrack Create (2.2ms)[0m   [0;1mINSERT INTO `tracks` (`updated_at`, `trackable_type`, `content`, `trackable_id`, `operator_name`, `created_at`) VALUES('2009-08-10 15:54:47', NULL, 'Test content', NULL, 'System', '2009-08-10 15:54:47')[0m
+  [4;35;1mTrack Update (5.2ms)[0m   [0mUPDATE `tracks` SET `trackable_id` = 5, `trackable_type` = 'Order', `updated_at` = '2009-08-10 15:54:47' WHERE `id` = 8[0m
+  [4;36;1mTrack Load (0.5ms)[0m   [0;1mSELECT * FROM `tracks` WHERE (`tracks`.trackable_id = 5 AND `tracks`.trackable_type = 'Order') [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mROLLBACK[0m

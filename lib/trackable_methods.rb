@@ -55,7 +55,8 @@ module Corntrace
         
         # Helper method that defaults the submitted time.
         def add_track(track)
-          tracks << track
+          track[:operator_name]="System" if track.is_a?(Hash) && track[:operator_name].nil?
+          track.is_a?(Hash) ? tracks << Track.create(track) : tracks << track
         end
       end
       
